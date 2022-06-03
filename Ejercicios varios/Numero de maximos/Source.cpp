@@ -7,7 +7,8 @@ using namespace std;
 *		  fun contMax(vector<int> v) dev {int maximo, int cont}
 *		- Postcondicion Q: { (maximo == max k : 0 <= k < v.size() : v[k]) ^ (cont == #k : 0 <= k < v.size() : v[k] == maximo) }
 *	Invariante: 
-*		  I : { (maximo == max k : 0 <= k < v.size() : v[k]) ^ (cont == #k : 0 <= k < i : v[k] == maximo) ^ (i <= v.size()) } 
+*		  I : { (maximo == max k : 0 <= k < v.size() : v[k]) ^ (cont == #k : 0 <= k < i : v[k] == maximo) ^ (i <= v.size()) }
+*    Función de cota: t(i) = v.size() - i + 1.
 */
 
 void contMax(vector<int> const& v, int& maximo, int& cont) {
