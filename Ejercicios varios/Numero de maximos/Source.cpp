@@ -2,8 +2,8 @@
 #include <vector>
 using namespace std;
 
-/*	Especificación:
-*		- Precondición P: { v.size() > 0 }
+/*	EspecificaciÃ³n:
+*		- PrecondiciÃ³n P: { v.size() > 0 }
 *		  fun contMax(vector<int> v) dev {int maximo, int cont}
 *		- Postcondicion Q: { (maximo == max k : 0 <= k < v.size() : v[k]) ^ (cont == #k : 0 <= k < v.size() : v[k] == maximo) }
 */
