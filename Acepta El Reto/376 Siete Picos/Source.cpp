@@ -2,17 +2,17 @@
 #include <vector>
 using namespace std;
 
-/*	Especificaci髇:
-*		- Precondici髇 P: { v.size() >= 2 ^ v.size <= 1000 ^ forall k : 0 <= k < v.size() : v[k] < 1000 } 
+/*	Especificaci贸n:
+*		- Precondici贸n P: { v.size() >= 2 ^ v.size <= 1000 ^ forall k : 0 <= k < v.size() : v[k] < 1000 } 
 *		  fun calcularPicos(vector<int> v) dev {int numPicos}
-*		- Postcondici髇 Q: { (numPicos == #p : 0 <= p < v.size() : (p - 1 < p ^ p + 1 < p) ^ (p == v.size() - 1 : numPicos++ : p > primerAltura = v[0] ^ p > p - 1) ^ 
+*		- Postcondici贸n Q: { (numPicos == #p : 0 <= p < v.size() : (p - 1 < p ^ p + 1 < p) ^ (p == v.size() - 1 : numPicos++ : p > primerAltura = v[0] ^ p > p - 1) ^ 
 *                            (p == v[0] : numPicos++ : p > ultimaAltura = v[v.size() - 1] ^ p > p + 1) }
 *   Para calcular la invariante I:
 *   En el bucle se calcula el valor numPicos. Cada vuelta del bucle, variable numPicos es un contador de los picos calculados en la parte del vector ya recorrida.
-*   En la vuelta i-閟ima, el valor de numPicos cumple: numPicos == (#p : 0 <= o < v.size() : (p - 1 < p ^ p > p + 1)
-*   A馻dimos al invariante una condici髇 sobre la variable de control del bucle: 2 <= v.size().
+*   En la vuelta i-茅sima, el valor de numPicos cumple: numPicos == (#p : 0 <= o < v.size() : (p - 1 < p ^ p > p + 1)
+*   A帽adimos al invariante una condici贸n sobre la variable de control del bucle: 2 <= v.size().
 *	Invariante Inv: Inv : { (numPicos == (#p : 0 <= o < v.size() : (p - 1 < p ^ p > p + 1)) ^ (2 <= v.size()) }
-*	Funci髇 de cota: t(i) = v.size() - i + 1.
+*	Funci贸n de cota: t(i) = v.size() - i + 1.
 */
 
 int calcularPicos(vector<int> const& v) {
