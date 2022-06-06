@@ -2,17 +2,17 @@
 #include <vector>
 using namespace std;
 
-/*  Especificaci髇:
-*       - Precondici髇 P: { v.size() > 0 ^ v.size <= 100000 }
+/*  Especificaci贸n:
+*       - Precondici贸n P: { v.size() > 0 ^ v.size <= 100000 }
 *         fun calcularFranja(vector<int> v, int pesoNieve) dev {int cont}
-*       - Postcondici髇 Q: { (cont == max p, q: 0 <= p <= q < v.size() ^ for all k : p <= k <= q : v[k] = numEnPie < 5 :q - p) ^
+*       - Postcondici贸n Q: { (cont == max p, q: 0 <= p <= q < v.size() ^ for all k : p <= k <= q : v[k] = numEnPie < 5 :q - p) ^
 *                             (numEnPie = #i : 0 <= i < v.size()) : v[i] >= pesoNieve) }
-*   Invariante Inv: Para demostrar la correcci髇 del bucle hacemos uso del predicado Invanriante. En el bucle se calculan los valores cont y numEnPie,
-*                   adem醩 se va modificando la variable de control i.
+*   Invariante Inv: Para demostrar la correcci贸n del bucle hacemos uso del predicado Invanriante. En el bucle se calculan los valores cont y numEnPie,
+*                   adem谩s se va modificando la variable de control i.
 *                    Por tanto Inv = { (cont == max p, q: 0 <= p <= q < v.size() ^ for all k : p <= k <= q : v[k] = numEnPie < 5 :q - p) ^
 *                                      (numEnPie = #i : 0 <= i < v.size()) : v[i] >= pesoNieve) ^ (i <= v.size()) }
-*   Funci髇 de cota: t(i) = v.size() - i
-*   Coste del algoritmo: En el caso peor es O(n), siendo n = v.size(), es decir, el tama駉 del vector..
+*   Funci贸n de cota: t(i) = v.size() - i
+*   Coste del algoritmo: En el caso peor es O(n), siendo n = v.size(), es decir, el tama帽o del vector..
 */
 
 int calcularFranja(vector<int> const& v, int pesoNieve) {
