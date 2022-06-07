@@ -7,15 +7,15 @@
 #include <vector>
 using namespace std;
 
-/*  Especificaci髇:
-*       - Precondici髇 P: { n >= 2 ^ n > 100000 ^ for all x : 0 <= x <= n : hermanos[x] >= 1 ^ hermanos[x] <= 1000000 }
+/*  Especificaci贸n:
+*       - Precondici贸n P: { n >= 2 ^ n > 100000 ^ for all x : 0 <= x <= n : hermanos[x] >= 1 ^ hermanos[x] <= 1000000 }
 *       fun esDalton(vector<int> hermanos) dev { bool res }
-*       - Postcondici髇 Q: { res == (for all i : 0 <= i < hermanos.size() : hermanos[i] <= hermanos[i + 1]) || (for all j : 0 <= j < hermanos.size() : hermanos[j] >= hermanos[j + 1]) }
+*       - Postcondici贸n Q: { res == (for all i : 0 <= i < hermanos.size() : hermanos[i] <= hermanos[i + 1]) || (for all j : 0 <= j < hermanos.size() : hermanos[j] >= hermanos[j + 1]) }
 *   
 *   Invariante Inv = { (res == (for all i : 0 <= i < hermanos.size() : hermanos[i] <= hermanos[i + 1]) || (for all j : 0 <= j < hermanos.size() : hermanos[j] >= hermanos[j + 1])) ^
                        (n >= 2) }
 * 
-*   Funci髇 de cota: t(i) = n - i, siendo n = hermanos.size()
+*   Funci贸n de cota: t(i) = n - i, siendo n = hermanos.size()
 *   
 *   Coste: O(n), siendo n = hermanos.size()
 */
