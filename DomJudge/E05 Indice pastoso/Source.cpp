@@ -7,15 +7,15 @@
 #include <vector>
 using namespace std;
 
-/*  Especificaci髇:
-*       - Precondici髇 P: { n >= 0 ^ n <= 100000}
+/*  Especificaci贸n:
+*       - Precondici贸n P: { n >= 0 ^ n <= 100000}
 *       proc indicePastoso(vector<int> v) dev {int indice, bool existe}
-*       - Postcondici髇 Q: { (existe == (i : 0 <= i < v.size() - 1 : v[i] = suma)) ^ (indice = i : 0 <= i <= v.size() : v[i] = suma) }
+*       - Postcondici贸n Q: { (existe == (i : 0 <= i < v.size() - 1 : v[i] = suma)) ^ (indice = i : 0 <= i <= v.size() : v[i] = suma) }
 * 
 *   Invariante Inv: { (existe == (i : 0 <= i < v.size() - 1 : v[i] = suma)) ^ (indice = i : 0 <= i <= v.size() : v[i] = suma) ^ (v.size() >= 0) ^
                       (suma = sum : 0 <= i <= v.size() - 1 : v[i]) }
 * 
-*   Funci髇 de cota: n - i, donde n = v.size().
+*   Funci贸n de cota: n - i, donde n = v.size().
 * 
 *   Coste del algoritmo: O(n), donde n = v.size().
 */
