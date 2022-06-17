@@ -20,16 +20,16 @@ bool esValida(const vector<int>& supermercado, const vector<bool>& productos, in
 void comprar(const vector<vector<int>>& valores, int m, int n, int cont, int& total, int& precioActual, vector<int>& supermercado, vector<bool>& productos, const vector<int>& acumulados, bool& correcto) {
     for (int i = 0; i < m; i++) {
         if (esValida(supermercado, productos, cont, i)) {
-            precioActual += valores[i][cont];       // Sumamos el valor del precio del producto en posición cont y en el supermercado i a la suma total. 
-            productos[cont] = true;                 // Marcamos que ya tenemos el producto en posición cont seleccionado.
-            supermercado[i]++;                      // Aumentamos el numero de productos que hemos cogido del supermercado en la posición i.
+            precioActual += valores[i][cont];       // Sumamos el valor del precio del producto en posiciÃ³n cont y en el supermercado i a la suma total. 
+            productos[cont] = true;                 // Marcamos que ya tenemos el producto en posiciÃ³n cont seleccionado.
+            supermercado[i]++;                      // Aumentamos el numero de productos que hemos cogido del supermercado en la posiciÃ³n i.
             if (cont == n - 1) {       // Si hemos llegado al final del vector.
                 if (precioActual < total) {
                     total = precioActual;
                     correcto = true;
                 }
             }
-            else {  // Si el precio que se lleva hasta entonces más lo posible más pequeño a partir de ahí es menor que lo guardado en total entonces se llama recursivamente, si no, se mantiene dicho total y no se hace la recursión.
+            else {  // Si el precio que se lleva hasta entonces mÃ¡s lo posible mÃ¡s pequeÃ±o a partir de ahÃ­ es menor que lo guardado en total entonces se llama recursivamente, si no, se mantiene dicho total y no se hace la recursiÃ³n.
                 if (acumulados[cont + 1] + precioActual < total) {
                     comprar(valores, m, n, cont + 1, total, precioActual, supermercado, productos, acumulados, correcto);
                 }
@@ -59,8 +59,8 @@ void resuelveCaso() {
 
     for (int i = 0; i < n; i++) {
         minValores[i] = valores[0][i];
-        for (int j = 0; j < m; j++) {      // Obtenemos los mínimos de cada producto.
-            if (minValores[i] > valores[j][i]) {        // Obtenemos los mínimos de cada producto.
+        for (int j = 0; j < m; j++) {      // Obtenemos los mÃ­nimos de cada producto.
+            if (minValores[i] > valores[j][i]) {        // Obtenemos los mÃ­nimos de cada producto.
                 minValores[i] = valores[j][i];
             }
         }
