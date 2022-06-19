@@ -9,15 +9,15 @@ using namespace std;
 *   Apartado 2: 
 *       numSegs = (#longitudPar : 0 <= p <= q < v.size() : todosPares(v, p, q) ^ v.size() >= 0)
 * 
-*   Apartado 3: Especificaci髇.
-*       - Precondici髇: { v.size() >= 0 }
+*   Apartado 3: Especificaci贸n.
+*       - Precondici贸n: { v.size() >= 0 }
 *           fun numSegmentos(vector<int> v) {dev int numSegs}
-*       - Postcondici髇: { numSegs = (#longitudPar : 0 <= p <= longitudPar <= q < v.size() : todosPares(v, p, q) }
+*       - Postcondici贸n: { numSegs = (#longitudPar : 0 <= p <= longitudPar <= q < v.size() : todosPares(v, p, q) }
 *       
 *   Apartado 4: 
 *        Invariante:
 *           Inv = { numSegs = sum(#longitudPar : 0 <= p <= q < v.size() : todosPares(v, p, q) ^ v.size() >= 0) ^ i <= v.size() ^ longitudPar = (for all i : #z : 0 <= p <= z <= i <= q : v[i] % 2 == 0) }
-*       Funci髇 de cota: t(i) = v.size() - i;
+*       Funci贸n de cota: t(i) = v.size() - i;
 *
 *   Apartado 5:
 *       Coste del algoritmo: lineal O(n), siendo n = v.size().
