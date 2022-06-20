@@ -6,10 +6,10 @@ using namespace std;
 
 bool esValido(const vector<bool>& trabajos, const vector<bool>& funcis, int k, int i) {
     if (k > 0) {        // Si contador es mayor que 0.
-        if (trabajos[k]) {  // Y trabajos en k no está asignado.
+        if (trabajos[k]) {  // Y trabajos en k no estÃ¡ asignado.
             return false;
         }
-        if (funcis[i]) {    // Y funcis en i no está asignado.
+        if (funcis[i]) {    // Y funcis en i no estÃ¡ asignado.
             return false;
         }
     }
@@ -22,14 +22,14 @@ void sumarTiempos(const vector<vector<int>>& tiempos, int n, int k, const vector
         if (esValido(trabajos, funcis, k, i)) {     // Comprobamos si es valido
             funcis[i] = true;       // Marcamos funcis.
             trabajos[k] = true;     // Marcamos trabajos.
-            if (k == n - 1) {       // Si hemos llegado al último.
-                if (sumaActual < sumaMin) {     // Y la sumaActual es menor que la mínima.
+            if (k == n - 1) {       // Si hemos llegado al Ãºltimo.
+                if (sumaActual < sumaMin) {     // Y la sumaActual es menor que la mÃ­nima.
                     sumaMin = sumaActual;       // Asignamos la nueva suma.
                 }
             }
             else {
-                if (acumulados[k + 1] + sumaActual < sumaMin) {     // Poda. (Si la suma actual más la siguiente es menor que el minimo.
-                    sumarTiempos(tiempos, n, k + 1, acumulados, sumaActual, sumaMin, trabajos, funcis);     // Entonces hacemos la vuelta atrás.
+                if (acumulados[k + 1] + sumaActual < sumaMin) {     // Poda. (Si la suma actual mÃ¡s la siguiente es menor que el minimo.
+                    sumarTiempos(tiempos, n, k + 1, acumulados, sumaActual, sumaMin, trabajos, funcis);     // Entonces hacemos la vuelta atrÃ¡s.
                 }
             }
             funcis[i] = false;      // Desmarcamos funcis.
