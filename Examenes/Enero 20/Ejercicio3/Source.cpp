@@ -62,7 +62,7 @@ bool resuelveCaso() {
     }
 
     int costeMin = 200000, coste = 0, k = 0;       // costeMin para el coste minimo de pintar toda la escalera. 
-    vector<int> sol(n);         // Vector donde se escribir· el color utilizado en cada escalon.
+    vector<int> sol(n);         // Vector donde se escribir√° el color utilizado en cada escalon.
     vector<int> coloresUsados(n);       // Vector para guardar los colores ya usados.
     bool sePuede = false;
     int ultimo = -1;
