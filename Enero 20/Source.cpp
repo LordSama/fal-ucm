@@ -6,16 +6,16 @@ using namespace std;
 /* Apartado A: 
 *       Precondicion P = {v.size() > 0}
 *       proc calcularTramoAscendente(vector<int> v) dev {numElems, maxAncho}
-*       PostCondici髇 Q = (#numElems = for all i : 0 <= i < v.size() : (v[i] <= v[i + 1]) ^ (#ancho : v[i] == v[i + 1]))
+*       PostCondici贸n Q = (#numElems = for all i : 0 <= i < v.size() : (v[i] <= v[i + 1]) ^ (#ancho : v[i] == v[i + 1]))
 *       Invariante I = { (#numElems = for all i : 0 <= i < v.size() : (v[i] <= v[i + 1]) ^ (#ancho : v[i] == v[i + 1])) ^ (0 <= i < v.size() - 1) }
-*       Coste de la funci髇 = O(n) lineal, siendo n = v.size().
+*       Coste de la funci贸n = O(n) lineal, siendo n = v.size().
 * 
 *   Apartado B:
 *       Precondicion P = {v.size() > 0}
 *       proc calcularTramoDescendente(vector<int> v) dev {numElems, maxAncho}
-*       PostCondici髇 Q = (#numElems = for all i : 0 <= i < v.size() : (v[i] >= v[i + 1]) ^ (#ancho : v[i] == v[i + 1]))
+*       PostCondici贸n Q = (#numElems = for all i : 0 <= i < v.size() : (v[i] >= v[i + 1]) ^ (#ancho : v[i] == v[i + 1]))
 *       Invariante I = { (#numElems = for all i : 0 <= i < v.size() : (v[i] >= v[i + 1]) ^ (#ancho : v[i] == v[i + 1])) ^ (0 <= i < v.size() - 1) }
-*       Coste de la funci髇 = O(n) lineal, siendo n = v.size().
+*       Coste de la funci贸n = O(n) lineal, siendo n = v.size().
 */
 
 void calcularTramoAscendente(const vector<int>& v, int& maxAncho, int& numElems, int numElemsDer) {
