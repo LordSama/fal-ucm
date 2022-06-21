@@ -2,24 +2,24 @@
 #include <fstream>
 using namespace std;
 
-/* m es el número de dígitos de n
+/* m es el nÃºmero de dÃ­gitos de n
  *          { c_0            si m=1
  *   T(m) = { T(m-1) + c_1   si m>1
- *  El coste es lineal con respecto al número de dígitos,
+ *  El coste es lineal con respecto al nÃºmero de dÃ­gitos,
  *   es decir O(m).
  */
 
 int multiplicativo(int n, int& prod) {
     int sol = 0;
-    if (n < 10) {//si sólo hay un dígito
+    if (n < 10) {//si sÃ³lo hay un dÃ­gito
         prod = n;
         if (n == 1) //la cifra es multiplicativa
             sol = 1;
     }
     else {//caso recursivo
-        int prodS; //producto de los siguientes dígitos
+        int prodS; //producto de los siguientes dÃ­gitos
         sol = multiplicativo(n / 10, prodS);
-        if (prodS == n % 10) //si la última cifra es multiplicativa sumamos uno más
+        if (prodS == n % 10) //si la Ãºltima cifra es multiplicativa sumamos uno mÃ¡s
             sol++;
         prod = prodS * n % 10; //actualizamos el producto
     }
