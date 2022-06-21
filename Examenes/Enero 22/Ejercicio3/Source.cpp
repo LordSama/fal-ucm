@@ -7,12 +7,12 @@ using namespace std;
 using matriz = vector<vector<int>>;
 
 
-//aproximamos por la recaudaciÛn m·xima por las teclas que quedan pulsar
+//aproximamos por la recaudaci√≥n m√°xima por las teclas que quedan pulsar
 int poda(const int k, const int m, const int rec_max) {
     return (m - k + 1) * rec_max;
 }
 
-//La ˙nica restricciÛn es que el castigo no debe superar C
+//La √∫nica restricci√≥n es que el castigo no debe superar C
 bool esCompatible(const int castigo, const int C) {
     return castigo <= C;
 }
@@ -24,12 +24,12 @@ void escribeSol(const vector<int>& v) {
 }
 
 /*
- * Espacio de b˙squeda: ·rbol de profundidad m (la longitud de la secuencia) y anchura de n (las distintas teclas).
+ * Espacio de b√∫squeda: √°rbol de profundidad m (la longitud de la secuencia) y anchura de n (las distintas teclas).
  * Marcadores: - rec: la recompensa acumulada hasta ahora.
  *             - castigo: el castigo acumulado hasta ahora.
- * SoluciÛn: - pulsa: vector de tamaÒo m con la secuencia de teclas.
- *           - maxRec: la recompensa m·xima.
- * Poda: aproximar por la m·xima recompensa por el n˙mero de teclas por pulsar
+ * Soluci√≥n: - pulsa: vector de tama√±o m con la secuencia de teclas.
+ *           - maxRec: la recompensa m√°xima.
+ * Poda: aproximar por la m√°xima recompensa por el n√∫mero de teclas por pulsar
  */
 
 
@@ -45,11 +45,11 @@ void teclas(int k, const int n, const int m, const int C, const matriz& recompen
                 castigo -= recompensa[pulsa[k - 1]][i];
         }
         if (esCompatible(castigo, C)) {
-            if (k == m - 1) {//Es soluciÛn
+            if (k == m - 1) {//Es soluci√≥n
                 if (rec > maxRec)
-                    maxRec = rec; //nueva recompensa m·xima
+                    maxRec = rec; //nueva recompensa m√°xima
             }
-            else {//no es soluciÛn
+            else {//no es soluci√≥n
                 int beneficio = poda(k, m, rec_max);
                 if (rec + beneficio > maxRec) //podamos si no mejora lo esperado
                     teclas(k + 1, n, m, C, recompensa, rec_max, maxRec, castigo, rec, pulsa);
@@ -67,10 +67,10 @@ void teclas(int k, const int n, const int m, const int C, const matriz& recompen
 
 int teclas(const int n, const int m, const int C, const matriz& recompensa, const int rec_max) {
     //Marcadores
-    int castigo = 0; //castigos que recibe el ratÛn
+    int castigo = 0; //castigos que recibe el rat√≥n
     int rec = 0; //recompensa actual
     //Solucion
-    int maxRec = -1;  //recompensa m·xima
+    int maxRec = -1;  //recompensa m√°xima
     vector<int> sol(m);  //las teclas pulsadas
     //Llamada
     teclas(0, n, m, C, recompensa, rec_max, maxRec, castigo, rec, sol);
@@ -81,10 +81,10 @@ void resuelveCaso() {
     int n, m, C; //teclas, longitud de la secuencia y castigo
     cin >> n >> m >> C;
     matriz recompensa(n, vector<int>(n));
-    int rec_max = 0; //recompensa m·xima para la poda
+    int rec_max = 0; //recompensa m√°xima para la poda
     for (int i = 0; i < n; ++i)
         for (int j = 0; j < n; ++j) {
-            cin >> recompensa[i][j];   //recompensa por pulsar j despuÈs de i
+            cin >> recompensa[i][j];   //recompensa por pulsar j despu√©s de i
             if (recompensa[i][j] >= rec_max)
                 rec_max = recompensa[i][j];
         }
